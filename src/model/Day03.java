@@ -11,6 +11,24 @@ public class Day03 {
         partTwo(file);
     }
 
+    private static void partOne(String file) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+
+        String value = reader.readLine();
+        int sumOfPriorities = 0;
+        while (value != null) {
+            String wordOne = value.substring(0, value.length() / 2);
+            String wordTwo = value.substring(value.length() / 2);
+
+            char sharedChar = getSharedChar(wordOne, wordTwo);
+            sumOfPriorities += getPriority(sharedChar);
+
+            System.out.println("Word: " + value + " / " + wordOne + " - " + wordTwo + " / " + sharedChar + " " + getPriority(sharedChar));
+            value = reader.readLine();
+        }
+        System.out.println("Sum of priorities: " + sumOfPriorities);
+    }
+
     private static void partTwo(String file) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(file));
 
@@ -28,24 +46,6 @@ public class Day03 {
         }
         System.out.println("Sum of priorities: " + sumOfPriorities);
 
-    }
-
-    private static void partOne(String file) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-
-        String value = reader.readLine();
-        int sumOfPriorities = 0;
-        while (value != null) {
-            String wordOne = value.substring(0, value.length() / 2);
-            String wordTwo = value.substring(value.length() / 2);
-
-            char sharedChar = getSharedChar(wordOne, wordTwo);
-            sumOfPriorities += getPriority(sharedChar);
-
-            System.out.println("Word: " + value + " / " + wordOne + " - " + wordTwo + " / " + sharedChar + " " + getPriority(sharedChar));
-            value = reader.readLine();
-        }
-        System.out.println("Sum of priorities: " + sumOfPriorities);
     }
 
     private static int getPriority(char sharedChar) {
