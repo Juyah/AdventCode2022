@@ -8,12 +8,11 @@ public class Day07 {
 
     public static void main(String[] args) throws IOException {
         String file = "src/inputs/day07.txt";
-        partOne(file);
+        bothSolutions(file);
     }
 
-    private static void partOne(String file) throws IOException {
+    private static void bothSolutions(String file) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(file));
-
 
         String value = reader.readLine();
         Directory root = new Directory("/");
