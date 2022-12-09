@@ -5,8 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-import static java.util.Arrays.deepToString;
-
 public class Day08 {
     public static void main(String[] args) throws IOException {
         String file = "src/inputs/day08.txt";
@@ -26,7 +24,6 @@ public class Day08 {
                 treeGrid[i][j] = Integer.parseInt(row[j]);
             }
         }
-        System.out.println(deepToString(treeGrid));
 
         int visibleTrees = 0;
         for (int i = 0; i < rows; i++) {
@@ -36,7 +33,6 @@ public class Day08 {
                 }
             }
         }
-
         System.out.println("Visible trees: " + visibleTrees);
 
         int maxScore = 0;
@@ -47,7 +43,6 @@ public class Day08 {
                 }
             }
         }
-
         System.out.println("Highest scenic score: " + maxScore);
     }
 
